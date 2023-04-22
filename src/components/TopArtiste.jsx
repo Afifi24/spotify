@@ -9,18 +9,28 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'swiper/css';
 import {Pagination } from 'swiper';
-const TopArtiste = () => {
-  const  [isopen,setIsopen] = useState('djk')
+const TopArtiste = () => {;
   return (
-    <div className='mt-10 flex-col flex  font-bold text-xl    gap-4 text-white'>
+    <div className='mt-10   flex-col flex  font-bold text-xl    gap-4 text-white'>
       <h2>TopArtiste</h2>
       <Swiper 
-      modules={[ Pagination]}
+      modules={[Pagination]}
       spaceBetween={5}
-      slidesPerView={2}
-      className='w-full'
-      >
-          <SwiperSlide >
+     
+      breakpoints={{
+        320: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 1.5,
+        },
+        968: {
+          slidesPerView: 2,
+        },
+
+      }}
+      className='w-full cursor-pointer'
+      > <SwiperSlide >
             <img className='h-[90px] w-[90px]  rounded-full' src={img1} alt="" />
           </SwiperSlide>
           <SwiperSlide >
@@ -32,8 +42,7 @@ const TopArtiste = () => {
           <SwiperSlide >
             <img className='h-[90px] w-[90px]   rounded-full' src={img4} alt="" />
           </SwiperSlide>
-      </Swiper>
-
+    </Swiper>
     </div>
   )
 }

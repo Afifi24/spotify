@@ -9,7 +9,7 @@ const SideBar = () =>{
   const [active,setActive] = useState('home')
   return(
 
-    <div className='hidden md:block navbarbg col-span-1  text-slate-400 px-4 py-6'>
+    <div className=' hidden md:block navbarbg col-span-1  text-slate-400 px-4 py-6'>
      <div className='flex items-center uppercase font-bold justify-center flex-col'><BsMusicNoteList className='text-4xl'/>music</div>
      <ul className=' hidden mt-20 md:flex flex-col gap-8'>
          <li onClick={()=>setActive('home')}  className={`flex ${active === 'home'?'text-white':''} cursor-pointer gap-1 items-center`}> <BiHome className='text-2xl'/> Home</li>
